@@ -4,9 +4,9 @@ using System.Diagnostics;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
-using BasicCMSWeb.Models;
+using BasicCMS.Web.Models;
 
-namespace BasicCMSWeb.Controllers
+namespace BasicCMS.Web.Controllers
 {
     public class HomeController : Controller
     {

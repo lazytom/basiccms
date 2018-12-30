@@ -4,7 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 
-namespace BasicCMSWeb.Areas.Pages.Controllers
+namespace BasicCMS.Web.Areas.Pages.Controllers
 {
     [Area("Pages")]
     public class HomeController : Controller
