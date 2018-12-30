@@ -17,7 +17,7 @@ namespace BasicCMS.Web.Areas.Pages
                 routes.MapRoute(
                     name: "pages",
                     template: "{*url}",
-                    defaults: new { area = "Pages", controller = "Page", action = "Page" }
+                    defaults: new { area = "Pages", controller = "Page", action = "PageAsync" }
                 );
             });
         }
