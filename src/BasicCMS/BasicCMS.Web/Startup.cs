@@ -62,6 +62,12 @@ namespace BasicCMS.Web
                   name: "areas",
                   template: "{area:exists}/{controller=Home}/{action=Index}/{id?}"
                 );
+
+                routes.MapRoute(
+                  name: "pages",
+                  template: "{*url}",
+                  defaults: new { area = "Pages", controller = "Page", action = "Page" }
+                );
             });
         }
     }
