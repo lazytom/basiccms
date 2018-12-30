@@ -1,13 +1,9 @@
 ﻿using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace BasicCMS.Web.Areas.Pages
 {
-    public class AreaConfig
+    public static class AreaConfig
     {
         public static void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
