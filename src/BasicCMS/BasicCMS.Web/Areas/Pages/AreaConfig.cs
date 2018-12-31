@@ -1,5 +1,8 @@
-﻿using Microsoft.AspNetCore.Builder;
+﻿using System;
+using BasicCMS.Lib.Pages;
+using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace BasicCMS.Web.Areas.Pages
 {
@@ -20,6 +23,12 @@ namespace BasicCMS.Web.Areas.Pages
                     defaults: new { area = "Pages", controller = "Page", action = "PageAsync" }
                 );
             });
+
+        }
+
+        internal static void ConfigureServices(IServiceCollection services)
+        {
+            services.AddScoped<IPageProvider, LocalDiskPageProvider>();
         }
     }
 }

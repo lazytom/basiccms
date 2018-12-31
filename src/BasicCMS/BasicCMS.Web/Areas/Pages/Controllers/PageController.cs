@@ -10,9 +10,16 @@ namespace BasicCMS.Web.Areas.Pages.Controllers
     [Area("Pages")]
     public class PageController : Controller
     {
+        private readonly IPageProvider PageProvider;
+
+        public PageController(IPageProvider pageProvider)
+        {
+            PageProvider = pageProvider;
+        }
+
         public async Task<IActionResult> PageAsync(string url)
         {
-            var page = await PageResolver.GetPageAsync(url);
+            var page = await PageProvider.GetAsync(url);
             if (page == null) return NotFound();
 
             ViewBag.Url = url;
