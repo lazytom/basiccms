@@ -12,9 +12,15 @@ namespace BasicCMS.Lib.Pages
             return Task.FromResult(true);
         }
 
-        public Task<Page> GetAsync(string url)
+        public Task<PageDetails> GetAsync(string url)
         {
-            return Task.FromResult(new Page() { Title = "Test " + url });
+            return Task.FromResult(new PageDetails() { Title = "Test " + url });
         }
+
+        public Task<IEnumerable<Page>> GetListAsync()
+        {
+            throw new NotImplementedException();
+        }
+
     }
 }
