@@ -6,5 +6,6 @@ namespace BasicCMS.Lib.Pages
 {
     public class PageDetails : Page
     {
+        public IEnumerable<Page> ChildPages { get; set; }
     }
 }

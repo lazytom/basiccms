@@ -1,5 +1,19 @@
-﻿@{
-    ViewData["Title"] = ViewBag.Page?.Title;
+﻿@model PageViewModel
+@{
+    ViewData["Title"] = Model.Page.Title;
 }
 
-<h3>@ViewBag.Url</h3>
+<h3>@Model.Page.Title</h3>
+
+<p>This page's Url is @Model.Page.Url</p>
+
+@if (Model.Page.ChildPages?.Any() ?? false)
+{
+    <h4>Child Pages</h4>
+    <ul>
+        @foreach (var p in Model.Page.ChildPages)
+        {
+            <li><a href="/@p.Url">@p.Title</a></li>
+        }
+    </ul>
+}

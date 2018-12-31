@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using BasicCMS.Lib.Pages;
+using BasicCMS.Web.Areas.Pages.Models;
 using Microsoft.AspNetCore.Mvc;
 
 namespace BasicCMS.Web.Areas.Pages.Controllers
@@ -22,10 +23,9 @@ namespace BasicCMS.Web.Areas.Pages.Controllers
             var page = await PageProvider.GetAsync(url);
             if (page == null) return NotFound();
 
-            ViewBag.Url = url;
-            ViewBag.Page = page;
+            var vm = new PageViewModel() { Page = page };
 
-            return View();
+            return View(vm);
         }
     }
 }
