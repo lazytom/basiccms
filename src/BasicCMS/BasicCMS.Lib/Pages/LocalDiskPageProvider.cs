@@ -12,10 +12,12 @@ namespace BasicCMS.Lib.Pages
     public class LocalDiskPageProvider : IPageProvider
     {
         private IHostingEnvironment HostingEnvironment;
+        private LocalDiskPageProviderSettings Settings;
 
-        public LocalDiskPageProvider(IHostingEnvironment hostingEnvironment)
+        public LocalDiskPageProvider(IHostingEnvironment hostingEnvironment, LocalDiskPageProviderSettings settings)
         {
             HostingEnvironment = hostingEnvironment;
+            Settings = settings;
         }
 
         public Task<bool> ExistsAsync(string url)
@@ -25,7 +27,7 @@ namespace BasicCMS.Lib.Pages
 
         public async Task<PageDetails> GetAsync(string url)
         {
-            var physicalPath = Path.Combine(HostingEnvironment.ContentRootPath, "PageData", (url ?? "index") + ".json");
+            var physicalPath = Path.Combine(HostingEnvironment.ContentRootPath, Settings.FolderName, (url ?? "index") + ".json");
 
             var page = JsonConvert.DeserializeObject<PageDetails>(await File.ReadAllTextAsync(physicalPath));
             return page;

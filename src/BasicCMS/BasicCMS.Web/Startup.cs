@@ -34,7 +34,7 @@ namespace BasicCMS.Web
 
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
 
-            Areas.Pages.AreaConfig.ConfigureServices(services);
+            Areas.Pages.AreaConfig.ConfigureServices(Configuration, services);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
