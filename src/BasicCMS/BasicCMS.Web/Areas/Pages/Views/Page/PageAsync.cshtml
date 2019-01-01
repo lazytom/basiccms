@@ -6,7 +6,7 @@
 <h3>@Model.Page.Title</h3>
 
 <p>This page's Url is @Model.Page.Url</p>
-
+<p>@Model.Page.Content.Field1</p>
 @if (Model.Page.ChildPages?.Any() ?? false)
 {
     <h4>Child Pages</h4>

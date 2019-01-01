@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Hosting;
+using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
 using System.Dynamic;
@@ -22,12 +23,16 @@ namespace BasicCMS.Lib.Pages
             return Task.FromResult(true);
         }
 
-        public Task<PageDetails> GetAsync(string url)
+        public async Task<PageDetails> GetAsync(string url)
         {
-            var physicalPath = Path.Combine(HostingEnvironment.ContentRootPath, url ?? "");
+            var physicalPath = Path.Combine(HostingEnvironment.ContentRootPath, "PageData", (url ?? "index") + ".json");
+
+            var page = JsonConvert.DeserializeObject<PageDetails>(await File.ReadAllTextAsync(physicalPath));
+            return page;
+            /*
+            // test data
             dynamic content = new ExpandoObject();
             content.FilePath = physicalPath;
-
             return Task.FromResult(new PageDetails()
             {
                 Url = url,
@@ -41,6 +46,7 @@ namespace BasicCMS.Lib.Pages
                 },
                 Content = content
             });
+            */
         }
 
         public Task<IEnumerable<Page>> GetListAsync()
