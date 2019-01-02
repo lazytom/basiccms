@@ -9,6 +9,7 @@ namespace BasicCMS.Admin.Areas.Admin.Controllers
     [Area("Admin")]
     public class HomeController : Controller
     {
+        [Route("_admin")]
         public IActionResult Index()
         {
             return View();
