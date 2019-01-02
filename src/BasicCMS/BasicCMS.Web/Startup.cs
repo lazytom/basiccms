@@ -55,7 +55,7 @@ namespace BasicCMS.Web
             app.UseStaticFiles();
             app.UseCookiePolicy();
 
-            Areas.Admin.AreaConfig.Configure(app, env);
+            BasicCMS.Admin.Areas.Admin.AreaConfig.Configure(app, env);
             Areas.Pages.AreaConfig.Configure(app, env);
         }
     }

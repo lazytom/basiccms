@@ -5,7 +5,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace BasicCMS.Web.Areas.Admin
+namespace BasicCMS.Admin.Areas.Admin
 {
     public static class AreaConfig
     {

@@ -29,7 +29,7 @@ namespace BasicCMS.Lib.Pages
         {
             var physicalPath = Path.Combine(HostingEnvironment.ContentRootPath, Settings.FolderName, (url ?? "index") + ".json");
 
-            var page = JsonConvert.DeserializeObject<PageDetails>(await File.ReadAllTextAsync(physicalPath));
+            var page = JsonConvert.DeserializeObject<PageDetails>(File.ReadAllText(physicalPath));
             return page;
             /*
             // test data
