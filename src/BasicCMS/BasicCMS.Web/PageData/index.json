@@ -2,5 +2,6 @@
   "Title": "This is the title of the 'home' page",
   "Url": "/",
   "Content": {
+    "Body": "<p>This is the body of the page.</p><p>To edit, <a href=\"/_admin/\">click here</a>.</p>"
   }
 }

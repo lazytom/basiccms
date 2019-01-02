@@ -4,9 +4,9 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 
-namespace BasicCMS.Web.Areas.Pages.Controllers
+namespace BasicCMS.Web.Areas.Admin.Controllers
 {
-    [Area("Pages")]
+    [Area("Admin")]
     public class HomeController : Controller
     {
         public IActionResult Index()

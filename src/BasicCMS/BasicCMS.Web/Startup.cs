@@ -35,6 +35,7 @@ namespace BasicCMS.Web
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
 
             Areas.Pages.AreaConfig.ConfigureServices(Configuration, services);
+            //Areas.Admin.AreaConfig.ConfigureServices(Configuration, services);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -54,13 +55,7 @@ namespace BasicCMS.Web
             app.UseStaticFiles();
             app.UseCookiePolicy();
 
-            //app.UseMvc(routes =>
-            //{
-            //    routes.MapRoute(
-            //        name: "default",
-            //        template: "{controller=Home}/{action=Index}/{id?}");
-            //});
-
+            Areas.Admin.AreaConfig.Configure(app, env);
             Areas.Pages.AreaConfig.Configure(app, env);
         }
     }
