@@ -32,10 +32,13 @@
                 <ul class="nav navbar-nav">
                     <li><a asp-area="" asp-controller="Home" asp-action="Index">Home</a></li>
                 </ul>
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="/Identity/Account/Register">Register</a></li>
+                    <li><a href="/Identity/Account/Login">Login</a></li>
+                </ul>
             </div>
         </div>
     </nav>
-
     <partial name="_CookieConsentPartial" />
 
     <div class="container body-content">

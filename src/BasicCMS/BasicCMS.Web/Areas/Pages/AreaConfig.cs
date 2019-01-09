@@ -19,12 +19,17 @@ namespace BasicCMS.Web.Areas.Pages
                 //);
 
                 routes.MapRoute(
+                    name: "identity",
+                    template: "Identity/{controller=Home}/{action=Index}/{id?}",
+                    defaults: new { area = "Identity" }
+                );
+
+                routes.MapRoute(
                     name: "pages",
                     template: "{*url}",
                     defaults: new { area = "Pages", controller = "Page", action = "PageAsync" }
                 );
             });
-
         }
 
         internal static void ConfigureServices(IConfiguration configuration, IServiceCollection services)

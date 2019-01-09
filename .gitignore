@@ -263,3 +263,4 @@ __pycache__/
 /src/BasicCMS/BasicCMS.Web/Properties/PublishProfiles/BasicCMSWeb - Web Deploy.pubxml
 *.pubxml
 /src/BasicCMS/BasicCMS.Web/Properties/PublishProfiles/BasicCMSWeb - Web Deploy.pubxml
+/src/BasicCMS/BasicCMS.Web/users.json
